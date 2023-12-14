@@ -1,0 +1,34 @@
+---
+title: "A UN Report on the Relationship between GDP and Life Expectancy"
+author: "richiehodel"
+date: "2023-12-14"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r packages}
+library(tidyverse)
+```
+
+This report was prepared to the attention of the United Nations.
+
+```{r data}
+gapminder_1997 <- read_csv("data/gapminder_1997.csv")
+gapminder_1997
+```
+ggplot(gdpPercap, lifeExp)
+
+```{r ggplot}
+ggplot(data = gapminder_1997) + 
+  aes(x = gdpPercap, y = lifeExp, color=continent, size=pop/1000000) +
+  geom_point() +
+  labs(x = "GDP Per Capita", y = "Life Expectancy",
+       title= "Do people in wealthy countries live longer?", size="Population (in millions)")
+```
+
+
+
